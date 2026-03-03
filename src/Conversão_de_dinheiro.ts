@@ -2,70 +2,31 @@ import promptSync from "prompt-sync";
 
 const prompt = promptSync();
 
-const nome: string = prompt("digite seu nome");
-const idadee: number = Number(prompt("digite sua idadee: "));
+let valores: number[] = [];
+let loop: number = 1
+do
+{
+     console.log(`Option 0: Sair`);
+     console.log(`Option 1: Calcular IBM `);
+     console.log(`Option 2:  Historico de Consultas`)
+let option: number = Number(prompt("Digite uma opção: "));
 
-console.log(`Olá, $(nome)! Você tem $(idadee) anos.`);
-
-let a: number = 10;
-let b: number = 5;
-
-console.log("Soma: ", a + b);
-console.log("Subtração: ", a - b);
-console.log("Multiplicação: ", a * b);
-console.log("Divisão: ", a / b);
-console.log("Módulo: ", a % b);
-console.log("Exponenciação: ", a ** b);
-console.log("Igualdade: ", a == b);
-console.log("Igualde estrita: ", a === b);
-
-a++; // a = a + 1
-a += b; // a = a + b
-
-let numbers: number[] = [1, 2, 3, 4, 5];
-
-let nomes: string[] = ["Ana", "Anisio", "Raul"];
-
-let posRaul = nomes.indexOf("Rauls");
-
-nomes.splice(1)
-
-console.log(nomes)
-
-let idade: Array<number> = [20, 30, 40]
-
-let mist: (number | string)[]= [1, "dois", 3, "quatro"]
-
-nomes.push("Rafael")
-nomes.unshift("Aldaberto")
-
-nomes.pop();
-nomes.shift();
-
-console.log(nomes[0]);
-console.log(nomes.length)
-
-for(let i = 0; i < 5; i++){
-    console.log(`Iteração: ${i}`)
+if (option == 0) {
+      console.log(`tchau!`);
+      loop = 0
 }
-
-let contador = 0;
-while (contador < 5){
-    console.log(`Iteração: ${contador}`)
-    contador++;
+if (option == 1)
+{
+     let peso: number = Number(prompt("Digite seu peso: "));
+     let altura: number = Number(prompt("Digite sua altura: "));
+     let IBM: number
+     IBM = peso / (altura * altura);
+     console.log(IBM);
+     valores.push(IBM);
+     console.log(valores)
 }
-
-do{
-    // desencolvimento...
-}while(contador < 3);
-
-const numeros = [10, 20, 30]
-
-for(const num of numeros){
-    console.log("Numeros: ", num);
+if (option == 2)
+{
+     console.log(valores)
 }
-
-// const pessoa = {nome: "Anisio", idade: 25, cidade: "Boituva"};
-// for( const chave in pessoa){
-
-// }
+}while(loop != 0);
